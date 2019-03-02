@@ -41,16 +41,16 @@ void FDistanceToolsEdMode::Enter()
 	FLevelEditorModule& LevelEditor = FModuleManager::GetModuleChecked<FLevelEditorModule>(TEXT("LevelEditor"));
 	TSharedPtr<ILevelViewport> LViewport = LevelEditor.GetFirstActiveViewport();
 
-	TSharedRef<SWidget> DistanceWidget = 
-		SNew(SOverlay)
-		+ SOverlay::Slot()
+	DistanceWidget->ClearChildren();
+
+	DistanceWidget->AddSlot()
 		.Padding(FMargin(40.0f, 40.0f, 40.0f, 40.0f))
 		.VAlign(VAlign_Top)
 		.HAlign(HAlign_Left)
 		[
 			SAssignNew(DistanceTextBox, STextBlock)
 			.ColorAndOpacity(FLinearColor::White)
-			.Font(FSlateFontInfo(FPaths::EngineContentDir() / TEXT("Slate/Fonts/Roboto-Bold.ttf"), 14))
+		.Font(FSlateFontInfo(FPaths::EngineContentDir() / TEXT("Slate/Fonts/Roboto-Bold.ttf"), 14))
 		];
 
 	LViewport->AddOverlayWidget(DistanceWidget);
@@ -78,7 +78,7 @@ void FDistanceToolsEdMode::Exit()
 		FToolkitManager::Get().CloseToolkit(Toolkit.ToSharedRef());
 		Toolkit.Reset();
 	}
-
+	
 	FEdMode::Exit();
 }
 

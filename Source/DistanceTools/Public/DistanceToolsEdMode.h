@@ -6,6 +6,9 @@
 #include "EdMode.h"
 #include "STextBlock.h"
 
+class ILevelViewport;
+class FLevelEditorModule;
+
 class FDistanceToolsEdMode : public FEdMode
 {
 public:
@@ -16,7 +19,9 @@ public:
 
 	FVector CameraLocation;
 	AActor* DistanceActor;
+	bool bEnabled = false;
 
+	TSharedRef<SOverlay> DistanceWidget = SNew(SOverlay);
 	/*
 		We store a reference to our text box so we can dynamically update it later,
 		rather than redrawing a new text box each time.
@@ -52,7 +57,6 @@ public:
 	void UpdateDistanceText();
 
 	virtual void Tick(FEditorViewportClient* ViewportClient, float DeltaTime) override;
-
 	//virtual void Render(const FSceneView* View, FViewport* Viewport, FPrimitiveDrawInterface* PDI) override;
 	//virtual void ActorSelectionChangeNotify() override;
 	bool UsesToolkits() const override;

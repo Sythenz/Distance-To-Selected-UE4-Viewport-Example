@@ -5,3 +5,5 @@ To use: Download/Clone to Project/Plugins/ directory of your project.
 
 Will update this plugin with latest editor version branch,
 and may move this from an FEdMode to a Viewport Show Flag.
+
+Twitter: @Codekittah

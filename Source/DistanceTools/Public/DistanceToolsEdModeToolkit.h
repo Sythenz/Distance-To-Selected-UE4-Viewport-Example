@@ -22,5 +22,5 @@ public:
 
 private:
 
-	//TSharedPtr<SWidget> ToolkitWidget;
+	TSharedPtr<SWidget> ToolkitWidget;
 };
