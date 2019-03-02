@@ -1,0 +1,23 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "DistanceTools",
+	"Description": "Displays distance to selected objects, helpful for LODing",
+	"Category": "Other",
+	"CreatedBy": "Alessa \"Codekitten\" Baker",
+	"CreatedByURL": "http://codekitten.me/",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "DistanceTools",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
+}
