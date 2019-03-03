@@ -32,15 +32,10 @@ void FDistanceToolsEdMode::Enter()
 {
 	FEdMode::Enter();
 
-	if (!Toolkit.IsValid() && UsesToolkits())
-	{
-		Toolkit = MakeShareable(new FDistanceToolsEdModeToolkit);
-		Toolkit->Init(Owner->GetToolkitHost());
-	}
-
 	FLevelEditorModule& LevelEditor = FModuleManager::GetModuleChecked<FLevelEditorModule>(TEXT("LevelEditor"));
 	TSharedPtr<ILevelViewport> LViewport = LevelEditor.GetFirstActiveViewport();
 
+	//Clear our children to double redrawing
 	DistanceWidget->ClearChildren();
 
 	DistanceWidget->AddSlot()
@@ -72,13 +67,7 @@ void FDistanceToolsEdMode::Tick(FEditorViewportClient* ViewportClient, float Del
 }
 
 void FDistanceToolsEdMode::Exit()
-{
-	if (Toolkit.IsValid())
-	{
-		FToolkitManager::Get().CloseToolkit(Toolkit.ToSharedRef());
-		Toolkit.Reset();
-	}
-	
+{	
 	FEdMode::Exit();
 }
 
@@ -120,9 +109,5 @@ void FDistanceToolsEdMode::UpdateDistanceText()
 	DistanceTextBox->SetText(FText::Format(LOCTEXT("DistanceToActor", "[{ActorName}] {Distance}"), Arguments));
 }
 
-bool FDistanceToolsEdMode::UsesToolkits() const
-{
-	return true;
-}
 
 #undef LOCTEXT_NAMESPACE

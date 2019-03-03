@@ -2,6 +2,8 @@
 
 #include "DistanceTools.h"
 #include "DistanceToolsEdMode.h"
+#include "Editor.h"
+#include "EditorModeManager.h"
 
 #define LOCTEXT_NAMESPACE "FDistanceToolsModule"
 
@@ -9,6 +11,7 @@ void FDistanceToolsModule::StartupModule()
 {
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
 	FEditorModeRegistry::Get().RegisterMode<FDistanceToolsEdMode>(FDistanceToolsEdMode::EM_DistanceToolsEdModeId, LOCTEXT("DistanceToolsEdModeName", "DistanceToolsEdMode"), FSlateIcon(), true);
+	//GLevelEditorModeTools().ActivateMode(FDistanceToolsEdMode::EM_DistanceToolsEdModeId);
 }
 
 void FDistanceToolsModule::ShutdownModule()
