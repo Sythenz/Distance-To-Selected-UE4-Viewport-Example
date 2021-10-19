@@ -1,9 +1,7 @@
 {
-	"Changelist" : 3561208,
-	"CompatibleChangelist" : 3452394,
-	"BuildId" : "e4375421-a13d-487b-9d62-7914ec38c04a",
-	"Modules" : 
+	"BuildId": "baacdc76-46d1-40a5-8965-ae2da01fe3b2",
+	"Modules": 
 	{
-		"DistanceTools" : "UE4Editor-DistanceTools.dll"
+		"DistanceTools": "UE4Editor-DistanceTools.dll"
 	}
 }

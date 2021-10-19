@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "EdMode.h"
-#include "STextBlock.h"
+#include "Widgets/Text/STextBlock.h"
 
 class ILevelViewport;
 class FLevelEditorModule;
@@ -47,7 +47,6 @@ public:
 		return void
 	*/
 	void UpdateCameraLocation(FEditorViewportClient* ViewportClient);
-	
 
 	/*
 		Updates our text to the format of [ActorName] distance
@@ -57,7 +56,5 @@ public:
 	void UpdateDistanceText();
 
 	virtual void Tick(FEditorViewportClient* ViewportClient, float DeltaTime) override;
-	//virtual void Render(const FSceneView* View, FViewport* Viewport, FPrimitiveDrawInterface* PDI) override;
-	//virtual void ActorSelectionChangeNotify() override;
 	// End of FEdMode interface
 };
