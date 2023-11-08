@@ -27,7 +27,7 @@ public class DistanceTools : ModuleRules
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core",
+				"Core", "Slate",
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
@@ -38,6 +38,7 @@ public class DistanceTools : ModuleRules
 			{
 				"CoreUObject",
 				"Engine",
+				"EditorFramework",
 				"Slate",
 				"SlateCore",
 				"InputCore",

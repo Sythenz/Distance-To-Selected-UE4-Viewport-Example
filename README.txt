@@ -1,4 +1,6 @@
 Compiled for UE4.16.3 (Legacy use by a friend)
+See 5.3 branch for supported Unreal Engine 5.3 version
+
 Add the plugin to a C++ project to recompile for newer versions.
 
 To use: Download/Clone to Project/Plugins/ directory of your project.

@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "EdMode.h"
-#include "STextBlock.h"
 
 class ILevelViewport;
 class FLevelEditorModule;

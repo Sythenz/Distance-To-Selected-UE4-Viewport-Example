@@ -1,18 +1,16 @@
 // Copyright 1998-2017 Epic Games, Inc. All Rights Reserved.
 
 #include "DistanceToolsEdMode.h"
-#include "DistanceToolsEdModeToolkit.h"
 #include "Toolkits/ToolkitManager.h"
 #include "EditorModeManager.h"
 #include "LevelEditor.h"
-#include "SOverlay.h"
-#include "SWidget.h"
-#include "ILevelViewport.h"
-#include "ModuleManager.h"
+#include "Widgets/SOverlay.h"
+#include "Widgets/SWidget.h"
+#include "IAssetViewport.h"
 #include "EditorViewportClient.h"
-#include "STextBlock.h"
+#include "Widgets/Text/STextBlock.h"
+#include "Widgets/Layout/SBorder.h"
 #include "Engine/Selection.h"
-#include "SBorder.h"
 
 const FEditorModeID FDistanceToolsEdMode::EM_DistanceToolsEdModeId = TEXT("EM_DistanceToolsEdMode");
 
@@ -33,7 +31,7 @@ void FDistanceToolsEdMode::Enter()
 	FEdMode::Enter();
 
 	FLevelEditorModule& LevelEditor = FModuleManager::GetModuleChecked<FLevelEditorModule>(TEXT("LevelEditor"));
-	TSharedPtr<ILevelViewport> LViewport = LevelEditor.GetFirstActiveViewport();
+	const TSharedPtr<IAssetViewport> LViewport = LevelEditor.GetFirstActiveViewport();
 
 	//Clear our children to double redrawing
 	DistanceWidget->ClearChildren();
